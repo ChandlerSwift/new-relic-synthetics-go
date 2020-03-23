@@ -137,7 +137,7 @@ type GetAllMonitorsResponse struct {
 
 // GetAllMonitors returns all monitors within a New Relic Synthetics
 // account. Values of -1 indicate to use the defaults.
-func (c *Client) GetAllMonitors(offset, limit uint) (*GetAllMonitorsResponse, error) {
+func (c *Client) GetAllMonitors(offset, limit int) (*GetAllMonitorsResponse, error) {
 	requestFunc := func() (*http.Request, error) {
 		url, err := url.Parse("https://synthetics.newrelic.com/synthetics/api/v3/monitors")
 		if err != nil {
